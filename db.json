@@ -1,77 +1,64 @@
 {
   "orders": [
     {
-      "id": 5,
-      "name": "25",
-      "cost": 0,
-      "client_name": "6315",
-      "start_date": "",
-      "end_date": "",
-      "comment": ""
-    },
-    {
-      "id": 8,
-      "name": "123",
+      "id": 1,
+      "name": "Do staff",
       "cost": 50000,
-      "client_name": "IGOR",
       "client_id": 3,
-      "start_date": "",
-      "end_date": "",
-      "comment": ""
+      "start_date": "15-09-892",
+      "end_date": "15-09-2451",
+      "comment": "We need to do some staff"
     },
     {
-      "id": 66,
-      "name": "123",
-      "cost": 80000,
-      "client_name": "IGOR",
-      "client_id": 3,
-      "start_date": "",
-      "end_date": "",
-      "comment": ""
-    },
-    {
-      "id": 9,
-      "name": "6332",
-      "cost": "062",
-      "client_name": "62",
+      "id": 2,
+      "name": "Doooo sssstaaafffff",
+      "cost": 8000000,
       "client_id": 5,
-      "start_date": "",
-      "end_date": "",
-      "comment": ""
+      "start_date": "15-09-892",
+      "end_date": "15-09-2451",
+      "comment": "We need to do some staff"
     },
     {
-      "id": 10,
-      "name": "236",
-      "cost": "0632",
-      "client_name": "62362",
-      "client_id": 6,
-      "start_date": "",
-      "end_date": "626",
-      "comment": ""
+      "id": 3,
+      "name": "D stf",
+      "cost": 4000,
+      "client_id": 3,
+      "start_date": "15-09-892",
+      "end_date": "15-09-2451",
+      "comment": "We need to do some staff"
+    },
+    {
+      "id": 4,
+      "name": "Sell Jesus",
+      "cost": 10,
+      "client_id": 13,
+      "start_date": "15-09-892",
+      "end_date": "15-09-2451",
+      "comment": "We need to do some..."
     }
   ],
   "clients": [
     {
-      "id": 1,
-      "name": "Aphex Twin",
-      "contacts": "88005553535"
-    },
-    {
-      "id": 2,
-      "name": "Dan Abramov",
-      "contacts": "88005553535"
-    },
-    {
       "id": 3,
-      "name": "Igor Sysoev",
-      "contacts": "88005553535"
+      "name": "Aphex Twin",
+      "tel": "880005553535"
+    },
+    {
+      "id": 5,
+      "name": "Fon Siemens",
+      "tel": "100-525-1242-80"
+    },
+    {
+      "id": 13,
+      "name": "Jude",
+      "tel": "10"
     }
   ],
   "discount_breakpoints": [
     {
       "id": 1,
-      "orders_amount": 10000,
-      "discount_size": 10
+      "orders_amount": 1000000,
+      "discount_size": 30
     },
     {
       "id": 2,
@@ -80,8 +67,8 @@
     },
     {
       "id": 3,
-      "orders_amount": 1000000,
-      "discount_size": 30
+      "orders_amount": 10000,
+      "discount_size": 10
     }
   ]
 }

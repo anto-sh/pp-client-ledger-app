@@ -1,6 +1,6 @@
 
 <template>
-  <div class="home">
+  <div class="c-clients">
     <v-clients-list></v-clients-list>
   </div>
 </template>
@@ -16,11 +16,11 @@ export default {
   },
   methods: {
     ...mapActions([
-      "SET_CURRENT_PAGE"
+      "SET_CURRENT_PAGE",
     ])
   },
   mounted() {
-    this.SET_CURRENT_PAGE("Клиенты")
+    this.SET_CURRENT_PAGE("Клиенты");
   }
 }
 </script>

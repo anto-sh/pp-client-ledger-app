@@ -5,7 +5,7 @@
     </button>
     <ul class="c-clients-list">
       <v-clients-list-item
-          v-for="client in clients"
+          v-for="client of clients"
           :key="client.id"
           :client_data="client"
           :client_orders="getClientOrders(client.id)"
@@ -23,35 +23,33 @@ import {mapActions, mapState} from "vuex";
 export default {
   name: 'v-clients-list',
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     vClientsListItem,
   },
   computed: {
     ...mapState([
-      "orders",
-      "clients",
       "discount_breakpoints",
+      "orders",
+      "clients"
     ])
   },
   methods: {
     ...mapActions([
-      "FETCH_ORDERS",
       "FETCH_CLIENTS",
+      "FETCH_ORDERS",
       "FETCH_DISCOUNT_BREAKPOINTS",
     ]),
     toClientForm() {
-      // let nextOrderId;
-      // if(this.orders.length) nextOrderId = this.orders[this.orders.length - 1].id + 1;
-      // else nextOrderId = 1;
-      // this.$router.replace({
-      //   name: 'order-form',
-      //   params: {'id': nextOrderId},
-      //   query: {'id': nextOrderId}
-      // })
+      let nextClientId = 1;
+      if(this.clients.length) nextClientId = this.clients[this.clients.length - 1].id + 1;
+      this.$router.replace({
+        name: 'client-form',
+        params: {'new_client_id': nextClientId},
+        query: {'id': nextClientId}
+      })
     },
     getClientOrders(client_id) {
-      return this.orders.filter(order => {
-        return order.client_id === client_id
+      return this.orders.filter(client => {
+        return client.client_id === client_id
       });
     }
   },

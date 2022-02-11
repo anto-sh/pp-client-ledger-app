@@ -5,9 +5,10 @@
     </button>
     <ul class="c-orders-list">
       <v-orders-list-item
-          v-for="order in orders"
+          v-for="order of orders"
           :key="order.id"
           :order_data="order"
+          :client_name="getOrderClientData(order)"
       ></v-orders-list-item>
     </ul>
   </div>
@@ -21,31 +22,37 @@ import {mapActions, mapState} from "vuex";
 export default {
   name: 'v-orders-list',
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     vOrdersListItem,
   },
   computed: {
     ...mapState([
-      "orders"
+      "orders",
+      "clients"
     ])
   },
   methods: {
     ...mapActions([
+      "FETCH_CLIENTS",
       "FETCH_ORDERS"
     ]),
     toOrderForm() {
-      let nextOrderId;
-      if(this.orders.length) nextOrderId = this.orders[this.orders.length - 1].id + 1;
-      else nextOrderId = 1;
+      let nextOrderId = 1;
+      if (this.orders.length) nextOrderId = this.orders[this.orders.length - 1].id + 1;
       this.$router.replace({
         name: 'order-form',
-        params: {'id': nextOrderId},
+        params: {'new_order_id': nextOrderId},
         query: {'id': nextOrderId}
       })
+    },
+    getOrderClientData(order) {
+      if(this.clients.length === 1) return this.clients[0].name;
+      let curOrderClientObj = this.clients.find((client) => {return client.id === order.client_id});
+      if(curOrderClientObj) return curOrderClientObj.name;
     }
   },
   mounted() {
     this.FETCH_ORDERS();
+    this.FETCH_CLIENTS();
   }
 }
 </script>

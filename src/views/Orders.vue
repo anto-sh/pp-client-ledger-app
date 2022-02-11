@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="c-orders">
     <v-orders-list></v-orders-list>
   </div>
 </template>
@@ -15,11 +15,11 @@ export default {
   },
   methods: {
     ...mapActions([
-        "SET_CURRENT_PAGE"
+      "SET_CURRENT_PAGE",
     ])
   },
   mounted() {
-    this.SET_CURRENT_PAGE("Заказы")
+    this.SET_CURRENT_PAGE("Заказы");
   }
 }
 </script>
